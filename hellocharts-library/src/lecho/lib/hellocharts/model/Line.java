@@ -19,6 +19,7 @@ public class Line {
     private static final int DEFAULT_AREA_TRANSPARENCY = 64;
     public static final int UNINITIALIZED = 0;
     private int color = ChartUtils.DEFAULT_COLOR;
+    private int fillColor = ChartUtils.DEFAULT_COLOR;
     private int pointColor = UNINITIALIZED;
     private int darkenColor = ChartUtils.DEFAULT_DARKEN_COLOR;
     /**
@@ -50,6 +51,7 @@ public class Line {
 
     public Line(Line line) {
         this.color = line.color;
+        this.fillColor = line.fillColor;
         this.pointColor = line.pointColor;
         this.darkenColor = line.darkenColor;
         this.areaTransparency = line.areaTransparency;
@@ -106,6 +108,15 @@ public class Line {
             this.darkenColor = ChartUtils.darkenColor(color);
         }
         return this;
+    }
+
+    public Line setFillColor(int fillColor) {
+        this.fillColor = fillColor;
+        return this;
+    }
+
+    public int getFillColor() {
+        return fillColor;
     }
 
     public int getPointColor() {
